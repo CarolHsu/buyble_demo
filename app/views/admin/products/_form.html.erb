@@ -3,7 +3,7 @@
   <%= f.input :description, :as => :text, :input_html => { :class => "input-xxlarge"} %>
   <%= f.input :ntd, :as => :integer, :input_html => {:class => "input-xxlarge"} %>
   <p>Upload a picture</p>
-    <%= image_tag(@production.avatar_url) if @production.avatar? %>
+    <%= image_tag(@product.avatar_url) if @product.avatar? %>
     <%= f.file_field :avatar %>
     <%= f.hidden_field :avatar_cache %>
     <p>Or, you can upload a image url...</p>
