@@ -1,6 +1,6 @@
 defaults: &defaults
-  app_name: "Bootstrap Demo Rails App"
-  domain: "http://bootstrap-demo.dev"    
+  app_name: "Buyble_demo"
+  domain: "http://buyble_demo2.dev"    
   admin_emails: 
     - "xdite@rocodev.com"
   google_analytics_key: ""

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   require "will_paginate/array"
-  require 'carrierwave/orm/activerecord'
+  require "carrierwave/orm/activerecord"
 
   def require_is_admin
     unless (current_user && current_user.is_admin?)
