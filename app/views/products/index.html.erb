@@ -1,0 +1,27 @@
+<div class="span12">
+
+<h1>Listing products</h1>
+
+<div class="toolbar group">
+  <%= link_to("Admin Panel", admin_products_url, :class => "btn btn-primary pull-right") %>
+</div>
+
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
+
+<% @products.each do |product| %>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= product.description %></td>
+    <td><%= product.ntd %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= will_paginate(@products) %>
+
+</div>

@@ -3,8 +3,17 @@ BootstrapDemo::Application.routes.draw do
   devise_for :users
 
   match "/search" => "search#index", :as => "search"
+  match '/users/:id', :to => 'users#show', :as => :user
 
   resources :posts
+
+  namespace :admin do
+    resources :products
+  end
+
+  resources :products
+
+  root :to => "pages#welcome"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -59,7 +68,7 @@ BootstrapDemo::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
 
-  root :to => "posts#index"
+  # root :to => "posts#index"
   
   # See how all your routes lay out with "rake routes"
 

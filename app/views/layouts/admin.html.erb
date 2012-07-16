@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%= render_page_title_tag %>
+  <%= render_page_description_meta_tag %>
+  <%= render_page_keywords_meta_tag %>
+  <%= csrf_meta_tag %>
+  <%= stylesheet_link_tag "application"%>
+  <%= yield :styles %>
+
+  <%= og_title(@page_title)%>
+  <%= og_description(@page_description)%>
+  <%= og_image(@page_image) %>
+  
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21576540-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+  
+
+</head>
+<%= render_body_tag %>
+
+<%= render :partial => "common/menu" %>
+
+  <div class="container">
+      <%= notice_message %>
+      
+      <h1>Admin Panel</h1>
+      <div class="content">
+      <div class="row">
+      <%= yield %>
+      <%= yield (:sidebar) %>
+      </div> 
+              <%# render :partial => "common/general_sidebar" %>
+      </div>
+      <footer class="footer">
+        <%= render_list :class => "nav nav-pills pull-right" do |li|
+            li << link_to( "Link1", "#")
+            li << link_to( "Link2", "#")   
+            li << link_to( "Link3", "#")
+            li << link_to( "Link4", "#")
+        end %>
+        <p class="copyright">Copyright @2012 Rocodev. All rights reserved.</p>
+
+      </footer>
+      
+  </div>
+
+
+
+  
+
+  <%= render :partial => "common/bootstrap_modal"%>    
+  <%= render :partial => "common/facebook_js" %>
+  <%# render :partial => "common/google_analytics"%>
+ 
+  <%= javascript_include_tag "application" %>
+  <%= google_plusone_javascript_include_tag(:async => true, :lang => "zh-TW") %>
+  <%= yield :scripts %>
+
+
+<script>
+  <% if !current_user %>
+    $('a.buyask').addClass("need-login-estimate");
+  <% end %>
+</script>
+</body>
+</html>

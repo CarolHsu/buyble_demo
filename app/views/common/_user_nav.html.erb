@@ -10,7 +10,7 @@
   
     <li class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" href="<%= user_path(current_user) %>">
-          <%= current_user.name %>
+          <%= current_user.email %>
       </a>
       <%= render_list :class => "dropdown-menu" do |li|
           li << ["", :class => "divider"]
@@ -20,6 +20,9 @@
       end %>
 
     </li>
+
+    </li>
+    <li> <%= link_to("Logout",destroy_user_session_path, :method => :delete ) %> </li>
   
 <% else %>
     <li> <%= link_to( "Signup" ,new_user_registration_path) %> </li>

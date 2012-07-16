@@ -1,0 +1,13 @@
+<div class="span12">
+  <div class="toolbar group pull-right">
+    <%= link_to "Back", products_path %>
+  </div>
+  <h2> <%= @product.title %> </h2>
+
+  <p> <%= simple_format(@product.description) %> </p>
+
+  <%= image_tag(@product.avatar_url) if @product.avatar? %>
+
+  <p> 只要新台幣 ＄ <%= @product.ntd %> </p>
+
+</div>
