@@ -6,7 +6,7 @@
 
   <p> <%= simple_format(@product.description) %> </p>
 
-  <%= image_tag(@product.avatar_url) if @product.avatar? %>
+  <%= carrierwave_image(@product) %>
 
   <p> 只要新台幣 ＄ <%= @product.ntd %> </p>
 
