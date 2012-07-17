@@ -1,8 +1,7 @@
 class Product < ActiveRecord::Base
 
-  attr_accessible :description, :ntd, :title,:avatar_cache, :remote_avatar_url, :avatar, :country_id, :stock, :on_shelf_time, :off_shelf_time
-  mount_uploader :avatar, AvatarUploader
-  has_many :avatars
+  attr_accessible :description, :ntd, :title, :country_id, :stock, :on_shelf_time, :off_shelf_time
+  has_many :photos
 
   def available
     if (on_shelf_time <= Time.now && off_shelf_time > Time.now)

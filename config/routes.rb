@@ -8,10 +8,14 @@ BootstrapDemo::Application.routes.draw do
   resources :posts
 
   namespace :admin do
-    resources :products
+    resources :products do
+      resources :photos
+    end
   end
 
-  resources :products
+  resources :products do
+    resources :photos
+  end
 
   root :to => "pages#welcome"
 

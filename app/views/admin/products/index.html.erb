@@ -21,6 +21,7 @@
     <td><%= product.description %></td>
     <td><%= product.ntd %></td>
     <td>
+      <%= link_to("New a photo", new_admin_product_photo_path(product), :class => "btn btn-success") %>
       <%= link_to("Show product", product, :class => "btn btn-success") %>
       <%= link_to("Edit product", edit_admin_product_path(product), :class => "btn btn-success") %>
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger") %>

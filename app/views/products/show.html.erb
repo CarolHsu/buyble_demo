@@ -4,11 +4,13 @@
   </div>
   <h2> <%= @product.title %> </h2>
 
+  <% @photos.each do |photo| %>
+  <%= carrierwave_image(photo) %>
+  <% end %>
+
   <p> 國別 <%= @product.country_id %> </p>
 
-  <p> <%= simple_format(@product.description) %> </p>
-
-  <%= carrierwave_image(@product) %>
+  <p> 商品敘述 <%= simple_format(@product.description) %> </p>
 
   <p> 只要新台幣 ＄ <%= @product.ntd %> </p>
 

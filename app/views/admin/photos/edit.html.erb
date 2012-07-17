@@ -1,0 +1,12 @@
+<div class="span12">
+<h1>Edit photo</h1>
+
+<div class="toolbar group">
+   <%= link_to "Back", admin_products_path, :class => "pull-right" %>
+</div>
+
+<%= simple_form_for(@photo :html => { :class => "form-horizontal" }, :url => admin_product_photo_path(@product, @photo) do |f| %>
+<%= render :partial => "form", :locals => { :f => f } %>
+<% end %>
+
+</div>

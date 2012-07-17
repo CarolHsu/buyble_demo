@@ -6,13 +6,6 @@
   <%= f.input :stock, :as => :integer, :input_html => { :class => "input-xxlarge" } %>
   <%= f.input :on_shelf_time, :as => :datetime %>
   <%= f.input :off_shelf_time, :as => :datetime %>
-  <p>Upload a picture</p>
-    <%= image_tag(@product.avatar_url) if @product.avatar? %>
-    <%= f.file_field :avatar %>
-    <%= f.hidden_field :avatar_cache %>
-    <p>Or, you can upload a image url...</p>
-    <%= f.text_field :remote_avatar_url %>
-
   <div class="form-actions">
     <%= f.submit "Submit",  :class => "btn btn-primary" %>
   </div>
