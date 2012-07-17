@@ -17,12 +17,14 @@
   </tr>
 
 <% @products.each do |product| %>
+  <% if product.available %>
   <tr>
     <td><%= product.title %></td>
     <td><%= product.description %></td>
     <td><%= product.ntd %></td>
     <td><%= link_to("Show", product_path(product), :class => "btn btn-success") %></td>
   </tr>
+  <% end %>
 <% end %>
 </table>
 

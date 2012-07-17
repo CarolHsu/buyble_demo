@@ -4,6 +4,8 @@
   <%= f.input :description, :as => :text, :input_html => { :class => "input-xxlarge"} %>
   <%= f.input :ntd, :as => :integer, :input_html => {:class => "input-xxlarge"} %>
   <%= f.input :stock, :as => :integer, :input_html => { :class => "input-xxlarge" } %>
+  <%= f.input :on_shelf_time, :as => :datetime %>
+  <%= f.input :off_shelf_time, :as => :datetime %>
   <p>Upload a picture</p>
     <%= image_tag(@product.avatar_url) if @product.avatar? %>
     <%= f.file_field :avatar %>
