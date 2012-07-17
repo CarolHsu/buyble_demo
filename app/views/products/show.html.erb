@@ -4,10 +4,14 @@
   </div>
   <h2> <%= @product.title %> </h2>
 
+  <p> 國別 <%= @product.country_id %> </p>
+
   <p> <%= simple_format(@product.description) %> </p>
 
   <%= carrierwave_image(@product) %>
 
   <p> 只要新台幣 ＄ <%= @product.ntd %> </p>
+
+  <p> 勝於庫存 <%= @product.stock %> 件 </p>
 
 </div>
