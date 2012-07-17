@@ -12,7 +12,7 @@ gem "mysql2"
 gem "settingslogic"
 
 gem "carrierwave"
-
+gem "nested_form"
 
 gem "devise"
 # bootstrap

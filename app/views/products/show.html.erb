@@ -5,7 +5,7 @@
   <h2> <%= @product.title %> </h2>
 
   <% @photos.each do |photo| %>
-  <%= link_to(carrierwave_image(photo), product_photo_path(@product, photo)) %>
+  <%= carrierwave_image(photo) %>
   <% end %>
 
   <p> 國別 <%= @product.country_id %> </p>

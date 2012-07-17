@@ -13,9 +13,7 @@ BootstrapDemo::Application.routes.draw do
     end
   end
 
-  resources :products do
-    resources :photos
-  end
+  resources :products
 
   root :to => "pages#welcome"
 
