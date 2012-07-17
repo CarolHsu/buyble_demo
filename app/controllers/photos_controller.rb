@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 
-  before_filter :fond_product
+  before_filter :find_product
 
   def index
     redirect_to(product_posts_path(@product))

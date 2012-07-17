@@ -1,0 +1,12 @@
+<div class="span12">
+  <div class="toolbar group pull-right">
+    <%= link_to "Back", product_path(@product) %>
+  </div>
+  <h2> <%= @product.title %> </h2>
+
+  <%= image_tag(@photo.avatar_url(:origin)) %>
+
+  <p> <%= @photo.content %> </p>
+
+  
+</div>
