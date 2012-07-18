@@ -9,11 +9,12 @@ module ProductsHelper
   end
 
   def product_country(item)
-    if (item.country_id == 1)
+    case item.country_id
+    when 1
       return "Japan"
-    elsif (item.country_id == 2)
+    when 2
       return "Korea"
-    else
+    when 3
       return "US"
     end
   end
