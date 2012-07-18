@@ -10,10 +10,12 @@ class Admin::ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @country = {"US" => 0, "JP" => 1, "KR" => 2}
   end
 
   def edit
     @product = Product.find(params[:id])
+    @country = {"US" => 0, "JP" => 1, "KR" => 2}
   end
 
   def create

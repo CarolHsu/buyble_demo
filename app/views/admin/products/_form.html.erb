@@ -1,11 +1,11 @@
   <%= f.error_notification %>
-  <%= f.input :country_id, :as => :integer, :input_html => { :class => "input-xxlarge" } %>
-  <%= f.input :title, :input_html => { :class => "input-xxlarge"} %>
-  <%= f.input :description, :as => :text, :input_html => { :class => "input-xxlarge"} %>
-  <%= f.input :ntd, :as => :integer, :input_html => {:class => "input-xxlarge"} %>
-  <%= f.input :stock, :as => :integer, :input_html => { :class => "input-xxlarge" } %>
-  <%= f.input :on_shelf_time, :as => :datetime %>
-  <%= f.input :off_shelf_time, :as => :datetime %>
+  <%= f.input :country_id, :label => "請選擇商品國別", :as => :select, :collection => Product::Country_categories.sort.map { |k, v|[v, k] }  %>
+  <%= f.input :title, :label => "商品名稱", :input_html => { :class => "input-xxlarge"} %>
+  <%= f.input :description, :label => "商品敘述", :as => :text, :input_html => { :class => "input-xxlarge"} %>
+  <%= f.input :ntd, :label => "商品價格", :as => :integer %>
+  <%= f.input :stock, :label => "商品庫存", :as => :integer %>
+  <%= f.input :on_shelf_time, :label => "上架時間", :as => :datetime, :html => {:class => nil} %>
+  <%= f.input :off_shelf_time, :label => "下架時間", :as => :datetime, :html => {:class => nil} %>
   <div class="form-actions">
-    <%= f.submit "Submit",  :class => "btn btn-primary" %>
+    <%= f.submit "建立商品",  :class => "btn btn-primary" %>
   </div>

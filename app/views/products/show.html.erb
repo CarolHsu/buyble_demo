@@ -8,7 +8,7 @@
   <%= carrierwave_image(photo) %>
   <% end %>
 
-  <p> 國別 <%= @product.country_id %> </p>
+  <p> 國別 <%= product_country(@product) %> </p>
 
   <p> 商品敘述 <%= simple_format(@product.description) %> </p>
 
