@@ -5,6 +5,8 @@ BootstrapDemo::Application.routes.draw do
   match "/search" => "search#index", :as => "search"
   match '/users/:id', :to => 'users#show', :as => :user
 
+  resources :users
+
   resources :posts
 
   namespace :admin do
