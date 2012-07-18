@@ -13,11 +13,6 @@
 
 ActiveRecord::Schema.define(:version => 20120718071423) do
 
-  create_table "countries", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
   create_table "photos", :force => true do |t|
     t.text     "content"
     t.datetime "created_at",                        :null => false
@@ -40,7 +35,6 @@ ActiveRecord::Schema.define(:version => 20120718071423) do
     t.integer  "ntd"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
-    t.string   "avatar"
     t.integer  "country_id"
     t.integer  "stock"
     t.datetime "on_shelf_time"
