@@ -1,7 +1,7 @@
 <%= f.error_notification %>
   <%= f.input :content, :as => :string, :input_html => { :class => "input-xxlarge" } %>
   <p>上傳相片</p>
-    <%= image_tag(@product.image_url) if @photo.image? %>
+    <%= image_tag(@photo.image_url) if @photo.image? %>
     <%= f.file_field :image %>
     <%= f.hidden_field :image_cache %>
     <p>或照片網址</p>
