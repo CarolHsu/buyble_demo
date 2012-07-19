@@ -3,6 +3,7 @@
 <h1>Listing products</h1>
 
 <div class="toolbar group">
+  <%= link_to("今日我最降", products_path(:discount => "1"), :class => "btn btn-primary pull-right") %>
   <%= link_to("New product", new_admin_product_path, :class => "btn btn-primary pull-right") %>
   <%= link_to("Back to User Panel", products_url, :class => "btn btn-primary pull-right") %>
 </div>
@@ -22,6 +23,8 @@
 
 
 
-<%= will_paginate(@products) %>
+  <div class = "paginate">
+    <%= will_paginate(@products) %>
+  </div>
 
 </div>
