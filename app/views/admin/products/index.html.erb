@@ -7,28 +7,20 @@
   <%= link_to("Back to User Panel", products_url, :class => "btn btn-primary pull-right") %>
 </div>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Actions</th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.title %></td>
-    <td><%= product.description %></td>
-    <td><%= product.ntd %></td>
-    <td>
+  <% @products.each do |product| %>
+  <div class = "product">
+    <h6><%= product.title %><h6>
+    <%= render_product_front_photo(product) %><br/>
+    <h6>NTD <%= product.ntd %> 元<h6>
+    截止時間  <%= product.off_shelf_time.strftime("%A %B %d, %Y") %><br/>
       <%= link_to("New a photo", new_admin_product_photo_path(product), :class => "btn btn-success") %>
-      <%= link_to("Show product", product, :class => "btn btn-success") %>
-      <%= link_to("Edit product", edit_admin_product_path(product), :class => "btn btn-success") %>
+      <%= link_to("Show", product, :class => "btn btn-success") %>
+      <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-success") %>
       <%= link_to("Destroy", admin_product_path(product), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "btn btn-danger") %>
-    </td>
-  </tr>
-<% end %>
-</table>
+  </div>
+  <% end %>
+
+
 
 <%= will_paginate(@products) %>
 

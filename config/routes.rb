@@ -3,7 +3,7 @@ BootstrapDemo::Application.routes.draw do
   devise_for :users
 
   match "/search" => "search#index", :as => "search"
-  match '/users/:id', :to => 'users#show', :as => :user
+  match "/users/:id", :to => "users#show", :as => :user
 
   resources :users
 

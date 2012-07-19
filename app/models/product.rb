@@ -5,10 +5,18 @@ class Product < ActiveRecord::Base
 
   scope :available, where(["on_shelf_time <= ? and off_shelf_time > ?", Time.now, Time.now])
 
+  scope :get_country, lambda{ |id| where (["country_id = ?", id])}
+  
+
   Country_categories = {
     1 => "Japan",
     2 => "Korea",
     3 => "US"
   }
+
+  def front_cover_photo
+    photos.where(:is_front_cover => true).first
+  end
+
   
 end

@@ -19,4 +19,7 @@ module ProductsHelper
     end
   end
 
+  def render_product_front_photo(product)
+    image_tag(product.front_cover_photo.image_url)
+  end
 end

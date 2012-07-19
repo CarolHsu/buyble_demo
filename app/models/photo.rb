@@ -6,4 +6,5 @@ class Photo < ActiveRecord::Base
   def is_front_cover?
     is_front_cover
   end
+
 end

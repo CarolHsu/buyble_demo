@@ -24,7 +24,14 @@
               
               <%# render_cell :common, :search_form %>
 
+
+          <%= link_to("日本團go", products_path(:country_id => "1"), :class => "brand")%>
+          <%= link_to("韓國團go", products_path(:country_id => "2"), :class => "brand") %>
+          <%= link_to("美國團go", products_path(:country_id => "3"), :class => "brand") %>
+
+
               <%= render :partial => "common/user_nav"%>
+
 
           </div>
     </div>

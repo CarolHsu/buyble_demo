@@ -8,23 +8,16 @@
   <% end %>
 </div>
 
-<table class="table">
-  <tr>
-    <th>Title</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>See more</th>
-  </tr>
 
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.title %></td>
-    <td><%= product.description %></td>
-    <td><%= product.ntd %></td>
-    <td><%= link_to("Show", product_path(product), :class => "btn btn-success") %></td>
-  </tr>
-<% end %>
-</table>
+ <% @products.each do |product| %>
+  <div class = "product">
+    <%= product_country(product) %>
+    <h6><%= link_to(product.title, product) %><h6>
+    <%= link_to(render_product_front_photo(product), product) %><br/>
+    <h6>NTD <%= product.ntd %> 元<h6>
+    截止時間  <%= product.off_shelf_time.strftime("%A %B %d, %Y") %><br/>
+  </div>
+  <% end %>
 
 <%= will_paginate(@products) %>
 

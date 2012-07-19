@@ -12,7 +12,19 @@ namespace :dev do
 
   desc "generate random_product"
   task :generate_random_product => :environment do
-    puts lorem_word
+    lorem_products(30)
+    puts "create fake products"
+  end
+
+  desc "generate a test admin"
+  task :generate_test_admin => :environment do
+    test_admin
+    puts "create a test admin"
+  end
+
+  desc "test"
+  task :test => :environment do
+    puts lorem_date
   end
 
 end
