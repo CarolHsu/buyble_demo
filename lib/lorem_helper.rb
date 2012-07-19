@@ -89,6 +89,7 @@ module LoremHelper
       product.description = lorem_paragraphs(3)
       product.ntd = rand(1000) + 2000
       product.stock = rand(100)
+      product.discount = rand(100) + 1
       y = 2012
       m = 7
       d = 18
