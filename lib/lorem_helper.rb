@@ -80,47 +80,6 @@ module LoremHelper
     src
   end
 
-  def lorem_products(total)
-    #generate admin
-    (1..total).map do
-      product = Product.new
-      product.country_id = rand(3) + 1
-      product.title = lorem_sentence
-      product.description = lorem_paragraphs(3)
-      product.ntd = rand(1000) + 2000
-      product.stock = rand(100)
-      product.discount = rand(100) + 1
-      y = 2012
-      m = 7
-      d = 18
-      hr = rand(24)
-      min = rand(60)
-      sec = rand(60)
-      dd = d + rand(6)
-      product.on_shelf_time = DateTime.civil(y, m, d, hr, min, sec, 0).to_s
-      product.off_shelf_time = DateTime.civil(y, m, dd, hr, min, sec, 0).to_s
-      product.save!
-      for i in (1..5)
-        photo = Photo.new
-        if i == 1
-          photo.is_front_cover = true          
-        end
-        photo.product_id = product.id
-        photo.content = lorem_paragraph
-        photo.remote_image_url = lorem_image("191x100")
-        photo.save!
-      end
-    end
-  end
-
-def test_admin
-  u = User.new
-  u.email = "admin@mail.com"
-  u.password = "admin123"
-  u.is_admin = true
-  u.save!
-end
-
   private
 
   def randm(range)
